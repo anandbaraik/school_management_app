@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import AddStudent from "./components/Students/AddStudent";
+import { EditStudent } from "./components/Students/EditStudent";
+import StudentList from "./components/Students/StudentList";
+import AddTeacher from "./components/Teachers/AddTeacher";
+import EditTeacher from "./components/Teachers/EditTeacher";
+import TeacherList from "./components/Teachers/TeacherList";
+import Statistics from "./components/shared/Homepage";
+import NavBarComponent from "./components/shared/NavBar";
+import { Routes, Route } from "react-router-dom";
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBarComponent />
+      <Routes>
+        <Route path="/" element={<Statistics />} />
+        <Route path="/students" element={<StudentList />} />
+        <Route path="/student/edit/:studentID" element={<EditStudent />} />
+        <Route path="/student/add" element={<AddStudent />} />
+        <Route path="/teachers" element={<TeacherList />} />
+        <Route path="/teacher/edit/:teacherID" element={<EditTeacher />} />
+        <Route path="/teacher/add" element={<AddTeacher />} />
+      </Routes>
     </div>
   );
 }
-
-export default App;

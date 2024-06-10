@@ -1,0 +1,12 @@
+.statisticsCard {
+  flex: 1;
+  max-width: 250px;
+  height: 200px;
+  margin: 10px;
+}
+
+.statisticsRow {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
